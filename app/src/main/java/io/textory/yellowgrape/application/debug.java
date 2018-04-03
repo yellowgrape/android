@@ -1,8 +1,11 @@
 package io.textory.yellowgrape.application;
 
+import android.os.Environment;
 import android.os.Handler;
 
 import com.google.gson.annotations.Expose;
+
+import java.io.File;
 
 import rebeccapurple.Function;
 import rebeccapurple.android.firebase.database.Subscription;
@@ -66,18 +69,19 @@ public class debug {
 //            functional.log.e("fail to functional.http.client.get(...)",e);
 //        }
 
-        Subscription<FirebaseExample> subscription = functional.android.firebase.database.subscribe("/", new FirebaseExample(), FirebaseExample.class, functional.log::e);
-
-        functional.android.firebase.database.set("/", new FirebaseExample());
-        functional.android.firebase.database.set("/hello", "hello2");
-        functional.android.firebase.database.get("/", FirebaseExample.class, functional.log::e);
-        functional.android.firebase.database.del("/hello");
-
-        functional.android.main.post(subscription::del, 1000L);
-        functional.android.main.post(()->subscription.get(functional.log::e), 2000L);
-        functional.android.main.post(()->subscription.set(new FirebaseExample("hello3", "world3")), 2000L);
-
-
+//        Subscription<FirebaseExample> subscription = functional.android.firebase.database.subscribe("/", new FirebaseExample(), FirebaseExample.class, functional.log::e);
+//
+//        functional.android.firebase.database.set("/", new FirebaseExample());
+//        functional.android.firebase.database.set("/hello", "hello2");
+//        functional.android.firebase.database.get("/", FirebaseExample.class, functional.log::e);
+//        functional.android.firebase.database.del("/hello");
+//
+//        functional.android.main.post(subscription::del, 1000L);
+//        functional.android.main.post(()->subscription.get(functional.log::e), 2000L);
+//        functional.android.main.post(()->subscription.set(new FirebaseExample("hello3", "world3")), 2000L);
+        File downloads = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+        functional.android.firebase.storage.get("firebase:///hello/logo.png", downloads.getAbsolutePath() + "/logo.png", functional.log::e);
+        functional.android.firebase.storage.set("fs://" + downloads.getAbsolutePath() + "/logo.png", "/hello/logo2.png", functional.log::e);
 
     }
 }

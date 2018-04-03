@@ -36,10 +36,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:12.0.1'
     implementation 'com.google.code.gson:gson:2.8.2'
 
-    // 3e8021b640ac868ecc37e47ea744a0
-    implementation 'com.github.rebeccapurple:android:5ada03b419'
-    implementation 'com.github.rebeccapurple:java:b1ffe22bd3'
-
+    implementation 'com.github.rebeccapurple:android:c9dc4c14a5'
+    implementation 'com.github.rebeccapurple:java:1896615287'
 
     testImplementation 'junit:junit:4.12'
 
