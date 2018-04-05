@@ -20,7 +20,10 @@ public class MainActivity extends AppCompatActivity {
 
     private static String[] PERMISSIONS = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
-            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_SMS,
+            Manifest.permission.SEND_SMS,
+            Manifest.permission.RECEIVE_SMS,
     };
 
     @Override
@@ -31,7 +34,21 @@ public class MainActivity extends AppCompatActivity {
         int permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (permission != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
+        }
 
+        permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_SMS);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
+        }
+
+        permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
+        }
+
+        permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
         }
 
 

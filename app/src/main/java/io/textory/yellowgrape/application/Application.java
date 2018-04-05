@@ -2,7 +2,6 @@ package io.textory.yellowgrape.application;
 
 import android.support.multidex.MultiDexApplication;
 
-import com.google.firebase.database.DatabaseError;
 import com.google.gson.GsonBuilder;
 
 
@@ -17,9 +16,8 @@ import com.google.gson.GsonBuilder;
 public class Application extends MultiDexApplication {
 
     private static void InitializeJson(GsonBuilder builder){
-        builder.registerTypeAdapter(android.os.Message.class, new functional.android.message.serializer());
-        builder.registerTypeAdapter(android.os.Message.class, new functional.android.message.deserializer());
-        builder.registerTypeAdapter(DatabaseError.class, new rebeccapurple.android.firebase.database.Serializer());
+        builder.registerTypeAdapter(android.os.Message.class, new rebeccapurple.android.message.Serializer());
+        builder.registerTypeAdapter(android.telephony.SmsMessage.class, new rebeccapurple.android.message.sms.Serializer());
     }
 
 

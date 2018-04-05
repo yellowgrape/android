@@ -1,11 +1,8 @@
 package io.textory.yellowgrape.application;
 
-import android.os.Environment;
 import android.os.Handler;
 
 import com.google.gson.annotations.Expose;
-
-import java.io.File;
 
 import rebeccapurple.Function;
 import rebeccapurple.exception.CancelledScheduleException;
@@ -41,31 +38,19 @@ public class debug {
         }
     }
 
-    public static class FirebaseExample {
-        @Expose public String hello = "hello";
-        @Expose public String world = "world";
-
-        public FirebaseExample(String hello, String world){
-            this.hello = hello;
-            this.world = world;
-        }
-
-        public FirebaseExample(){}
-    }
-
     public static void run(){
         __handler = new Handler();
 
-        functional.scheduler.dispatch(new Time(functional.timestamp.after(1000L), functional.scheduler::log));
-        functional.scheduler.dispatch(new Timeout(2000L, functional.scheduler::log));
-        scheduler(functional.scheduler.dispatch(new Tick(1000L, functional.scheduler::log)), 15000L, schedule -> ()->schedule.cancel(new CancelledScheduleException()));
-        scheduler(functional.scheduler.dispatch(new Timeout(3000L, functional.scheduler::log)), 1000L, schedule->()->schedule.cancel(new CancelledScheduleException()));
-        scheduler(functional.scheduler.dispatch(new Timeout(4000L, functional.scheduler::log)), 2000L, schedule->()->functional.scheduler.reset(schedule));
-
-        try {
-            functional.http.client.get("https://api.github.com/users/yellowgrape", http.response::json);
-        } catch (Throwable e) {
-            functional.log.e("fail to functional.http.client.get(...)",e);
-        }
+//        functional.scheduler.dispatch(new Time(functional.timestamp.after(1000L), functional.scheduler::log));
+//        functional.scheduler.dispatch(new Timeout(2000L, functional.scheduler::log));
+//        scheduler(functional.scheduler.dispatch(new Tick(1000L, functional.scheduler::log)), 15000L, schedule -> ()->schedule.cancel(new CancelledScheduleException()));
+//        scheduler(functional.scheduler.dispatch(new Timeout(3000L, functional.scheduler::log)), 1000L, schedule->()->schedule.cancel(new CancelledScheduleException()));
+//        scheduler(functional.scheduler.dispatch(new Timeout(4000L, functional.scheduler::log)), 2000L, schedule->()->functional.scheduler.reset(schedule));
+//
+//        try {
+//            functional.http.client.get("https://api.github.com/users/yellowgrape", http.response::json);
+//        } catch (Throwable e) {
+//            functional.log.e("fail to functional.http.client.get(...)",e);
+//        }
     }
 }
