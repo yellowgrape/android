@@ -38,8 +38,6 @@ public class Application extends MultiDexApplication {
         functional.scheduler.init(rebeccapurple.android.Scheduler.Get());
         functional.android.http.client.init(this);
         functional.http.client.init(functional.android.http.client.get(), rebeccapurple.android.http.Client::Factory);
-        functional.android.firebase.database.init();
-        functional.android.firebase.storage.init();
 
         functional.scheduler.on();
 
