@@ -32,8 +32,11 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.0'
 
     implementation 'com.google.code.gson:gson:2.8.2'
-    implementation 'com.github.rebeccapurple:android:082a87f592'
-    implementation 'com.github.rebeccapurple:java:3cc37d69e1'
+    // 350de83cf4fba0c4ff1f6fe3eea0a0
+    // 8f351b2adf86a5b666bcef1dbda05a
+    implementation 'com.github.rebeccapurple:android:781953c26f'
+    // 0bec28e61dac6909ddcd38cf1ea7d7
+    implementation 'com.github.rebeccapurple:java:a44d8ff05e'
 
     testImplementation 'junit:junit:4.12'
 

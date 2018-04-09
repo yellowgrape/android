@@ -17,7 +17,7 @@ public class Application extends MultiDexApplication {
 
     private static void InitializeJson(GsonBuilder builder){
         builder.registerTypeAdapter(android.os.Message.class, new rebeccapurple.android.message.Serializer());
-        builder.registerTypeAdapter(android.telephony.SmsMessage.class, new rebeccapurple.android.message.sms.Serializer());
+        builder.registerTypeAdapter(android.telephony.SmsMessage.class, new rebeccapurple.android.telephony.sms.Serializer());
     }
 
 
