@@ -23,56 +23,61 @@ public class Messenger extends Service {
         __server = new Server();
         __receiver = new Receiver();
 
-        Thread thread = new Thread(){
-            @Override
-            public void run(){
+//        Thread thread = new Thread(){
+//            @Override
+//            public void run(){
+//
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.DRAFT);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.OUTBOX);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.SENT);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.DRAFT);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.INBOX);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.OUTBOX);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.SENT);
+//                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.Thread.DB.CONTENT);
+//
+//
+//
+//                functional.android.telephony.sms.draft.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.sms.sent.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.sms.outbox.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.sms.inbox.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.sms.inbox.all(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.SORT.OLDEST, null, functional.log::e);
+//                functional.android.telephony.sms.inbox.all(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.SORT.RECENTLY, cursor -> functional.android.telephony.sms.id(cursor)!=606, functional.log::e);
+//
+////                functional.android.telephony.mms.draft.all(Messenger.this, functional.log::e);
+////                functional.android.telephony.mms.sent.all(Messenger.this, functional.log::e);
+////                functional.android.telephony.mms.inbox.all(Messenger.this, functional.log::e);
+////                functional.android.telephony.mms.outbox.all(Messenger.this, functional.log::e);
+////                functional.android.telephony.mms.address.all(Messenger.this, functional.log::e);
+////                functional.android.telephony.mms.part.all(Messenger.this, functional.log::e);
+////                functional.android.telephony.mms.rate.all(Messenger.this, functional.log::e);
+//
+//
+//                functional.android.telephony.msg.content.conversation.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.msg.content.draft.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.msg.content.locked.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.msg.content.all(Messenger.this,  rebeccapurple.android.telephony.msg.Content.DB.DEFAULT, functional.log::e);
+//                functional.android.telephony.msg.pending.all(Messenger.this, functional.log::e);
+//                functional.android.telephony.thread.content.all(Messenger.this, functional.log::e);
+//
+//                // functional.android.telephony.msg.content.byphone.all(Messenger.this, functional.log::e);
+//                // functional.android.telephony.msg.content.undelivered.all(Messenger.this, functional.log::e);
+//                // functional.android.telephony.msg.content.search.all(Messenger.this, functional.log::e);
+//                // functional.android.telephony.thread.obsolete.all(Messenger.this, functional.log::e);
+//                // functional.android.telephony.carrier.all(Messenger.this, functional.log::e);
+//                // functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.CONVERSATION);
+//                // functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.Thread.DB.OBSOLETE);
+//                // functional.android.telephony.sms.conversation.all(Messenger.this, functional.log::e);
+//            }
+//        };
 
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.DRAFT);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.OUTBOX);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.SENT);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.DRAFT);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.INBOX);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.OUTBOX);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.mms.Content.DB.SENT);
-                functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.Thread.DB.CONTENT);
 
 
+        // thread.start();
 
-                functional.android.telephony.sms.draft.all(Messenger.this, functional.log::e);
-                functional.android.telephony.sms.sent.all(Messenger.this, functional.log::e);
-                functional.android.telephony.sms.outbox.all(Messenger.this, functional.log::e);
-                functional.android.telephony.sms.inbox.all(Messenger.this, functional.log::e);
-                functional.android.telephony.sms.inbox.all(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.SORT.OLDEST, null, functional.log::e);
-                functional.android.telephony.sms.inbox.all(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.SORT.RECENTLY, cursor -> functional.android.telephony.sms.id(cursor)!=606, functional.log::e);
-
-//                functional.android.telephony.mms.draft.all(Messenger.this, functional.log::e);
-//                functional.android.telephony.mms.sent.all(Messenger.this, functional.log::e);
-//                functional.android.telephony.mms.inbox.all(Messenger.this, functional.log::e);
-//                functional.android.telephony.mms.outbox.all(Messenger.this, functional.log::e);
-//                functional.android.telephony.mms.address.all(Messenger.this, functional.log::e);
-//                functional.android.telephony.mms.part.all(Messenger.this, functional.log::e);
-//                functional.android.telephony.mms.rate.all(Messenger.this, functional.log::e);
-
-
-                functional.android.telephony.msg.content.conversation.all(Messenger.this, functional.log::e);
-                functional.android.telephony.msg.content.draft.all(Messenger.this, functional.log::e);
-                functional.android.telephony.msg.content.locked.all(Messenger.this, functional.log::e);
-                functional.android.telephony.msg.content.all(Messenger.this,  rebeccapurple.android.telephony.msg.Content.DB.DEFAULT, functional.log::e);
-                functional.android.telephony.msg.pending.all(Messenger.this, functional.log::e);
-                functional.android.telephony.thread.content.all(Messenger.this, functional.log::e);
-
-                // functional.android.telephony.msg.content.byphone.all(Messenger.this, functional.log::e);
-                // functional.android.telephony.msg.content.undelivered.all(Messenger.this, functional.log::e);
-                // functional.android.telephony.msg.content.search.all(Messenger.this, functional.log::e);
-                // functional.android.telephony.thread.obsolete.all(Messenger.this, functional.log::e);
-                // functional.android.telephony.carrier.all(Messenger.this, functional.log::e);
-                // functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.sms.Content.DB.CONVERSATION);
-                // functional.android.sql.columns(Messenger.this, rebeccapurple.android.telephony.Thread.DB.OBSOLETE);
-                // functional.android.telephony.sms.conversation.all(Messenger.this, functional.log::e);
-            }
-        };
-
-        thread.start();
+//        functional.android.telephony.sms.send(this, "01087197281", "OPERATOR BY CONTEXT", 0, functional.log::e);
+//        functional.android.telephony.sms.send("01087197281", "HELLO WORLD");
 
         operator.init(__server);
 

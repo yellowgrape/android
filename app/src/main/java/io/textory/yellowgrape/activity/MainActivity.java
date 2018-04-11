@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.READ_SMS,
             Manifest.permission.SEND_SMS,
             Manifest.permission.RECEIVE_SMS,
+            Manifest.permission.READ_PHONE_STATE
     };
 
     @Override
@@ -47,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.RECEIVE_SMS);
+        if (permission != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
+        }
+
+        permission = ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE);
         if (permission != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this, PERMISSIONS, 1);
         }

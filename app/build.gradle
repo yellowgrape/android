@@ -34,9 +34,11 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.2'
     // 350de83cf4fba0c4ff1f6fe3eea0a0
     // 8f351b2adf86a5b666bcef1dbda05a
-    implementation 'com.github.rebeccapurple:android:781953c26f'
+    // 94ed2c6fc876400be72ca8d462f3f6
+    // f2f9620fd5481972fafad53e5274d6
+    implementation 'com.github.rebeccapurple:android:f640977fe3'
     // 0bec28e61dac6909ddcd38cf1ea7d7
-    implementation 'com.github.rebeccapurple:java:a44d8ff05e'
+    implementation 'com.github.rebeccapurple:java:7f0fde95ae'
 
     testImplementation 'junit:junit:4.12'
 

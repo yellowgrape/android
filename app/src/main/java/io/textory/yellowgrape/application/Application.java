@@ -39,7 +39,7 @@ public class Application extends MultiDexApplication {
 
         functional.scheduler.on();
 
-        io.textory.yellowgrape.application.debug.run();
+        io.textory.yellowgrape.application.debug.run(this);
     }
 
 //        rebeccapurple.android.Scheduler.On();
